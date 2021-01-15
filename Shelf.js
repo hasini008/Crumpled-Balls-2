@@ -15,6 +15,7 @@ class Shelf{
           circleMode(CENTER);
           fill("violet");
         circle(-25 , 300 , 50)
+         this.Image = loadImage("paper.png");
          }
       }
 }
