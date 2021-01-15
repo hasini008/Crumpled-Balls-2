@@ -14,6 +14,7 @@ class Dustbin{
           rectMode(CENTER);
           fill("violet");
         rectangle(150 , 300 , 50 , 70)
+             this.Image = loadImage("dustbin.js");
          }
       }
 }
