@@ -9,7 +9,7 @@ class Dustbin{
       }  
       this.dustbin = Bodies.rectangle(  400 , 650 , 50 , 70 , dustbin_props)
         World.add(aiWorld , this.dustbin);
-        this.Image = loadImage("dustbin.png");
+        this.Image = loadImage("dustBin.png");
     }
     display() {
           imageMode(CENTER);
