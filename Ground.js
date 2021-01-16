@@ -8,7 +8,7 @@ class Ground{
          density : 1
            }
     
-        this.ball = body.rectangle(  x , y , width , height ,  Ground_props)
+        this.ball = Bodies.rectangle(  x , y , width , height ,  Ground_props)
       World.add(aiWorld , this.ball);
     
        this.width = width;
@@ -18,7 +18,7 @@ class Ground{
        display() {
         rectMode(CENTER);
         fill("black");
-      rect(0 , 0 , this.width  , this.height)
+      rect(this.ball.position.x , this.ball.position.y , this.width  , this.height)
     
        }
     }

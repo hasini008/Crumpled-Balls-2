@@ -6,16 +6,17 @@ class Shelf{
         restitution:0.8, 
         friction : 0.5 , 
         density : 1.2
-
-        Matter.Bodies.circle(  -25 , 300 , 50 ,  paper_props)
-        World.add(aiWorld , this.ball);
       }  
       
-         display() {
-          circleMode(CENTER);
-          fill("violet");
-        circle(-25 , 300 , 50)
-         this.Image = loadImage("paper.png");
-         }
-      }
+      this.paper = Matter.Bodies.circle(  25 , 650 , 25 ,  paper_props)
+      World.add(aiWorld ,this.paper );
+      this.Image = loadImage("paper.png");
+    }
+
+    display() {
+        imageMode(CENTER);
+        fill("violet");
+      image( this.Image , this.paper.position.x , this.paper.position.y , 50 , 50)
+
+    }
 }

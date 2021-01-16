@@ -2,7 +2,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var Engine;
+var aiEngine;
 var aiWorld;
 var paper , ground , dustbin;
 
@@ -14,8 +14,8 @@ function setup() {
 	createCanvas(800, 700);
 
 
-	engine = Engine.create();
-	world = engine.world;
+	aiEngine = Engine.create();
+	aiWorld = aiEngine.world;
 
 	//Create the Bodies Here.
     
@@ -23,18 +23,18 @@ function setup() {
 	
 	dustbin = new Dustbin();
 
-    ground = new Ground();
+    ground = new Ground(400 , 690 , 800 , 10);
 
 
-	Engine.run(engine);
+	Engine.run(aiEngine);
   
 }
 
 
 function draw() {
-  background("light green");
+  background("lightgreen");
 
-  engine.Update(Engine);
+  Engine.update(aiEngine);
 
   paper.display();
 
@@ -42,7 +42,7 @@ function draw() {
 
   ground.display();
 
-  drawSprites();
+  
  
 }
 
@@ -50,7 +50,7 @@ function draw() {
 function keyPressed() {
 
   if(keyCode === UP_ARROW){
-   Matter.Body.applyForce( paperObject.body , paperObject.body.position , {x = 98 , y = 280} );
+   Matter.Body.applyForce( paper.paper , paper.paper.position , {x:50 , y:-88} );
   }
 }
 
